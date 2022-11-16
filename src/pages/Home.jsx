@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Cart } from '../components/Cart/Cart';
+import React, { useContext, useEffect, useState } from 'react'
+
 import { ProductContainer } from '../components/ProductContainer/ProductContainer'
+import { UserContext } from '../context/UserContext';
 
 
 export const Home = () => {
 
-  const [stock, setStock] = useState([])
+const {stock, setStock, dataLS, setDataLS } = useContext(UserContext)
+
   let interinC = JSON.parse(localStorage.getItem('stock'));
   let interinW = JSON.parse(localStorage.getItem('wish'));
-  const [dataLS, setDataLS] = useState([])
+
   const [wishLS, setWishLS] = useState([])
 
   const fetchData = async () => {
@@ -24,14 +26,17 @@ export const Home = () => {
   }, [])
   
     useEffect(() => {
-      localStorage.setItem('stock', JSON.stringify(dataLS));
+      localStorage.setItem('basket', JSON.stringify(dataLS));
     }, [dataLS])
   
     const addToCart = (product) => {
-      let interinc = JSON.parse(localStorage.getItem('stock')) || [];
+      let interinc = JSON.parse(localStorage.getItem('basket')) || [];
       interinc.push(product);
       setDataLS(interinc)
+      console.log(interinc);
     }
+
+
 
 
 // add wishes
@@ -48,10 +53,12 @@ useEffect(() => {
     let interin = JSON.parse(localStorage.getItem('wish')) || [];
     interin.push(product);
     setWishLS(interin)
+    console.log(interin);
   }
 
 //intento borrar
-const deleteToCart = (id) => {
+const deleteToCart = (product) => {
+console.log(product);
   let interin = JSON.parse(localStorage.removeItem('stock')) || [];
   //interin.push(id);
   setWishLS(interin)
@@ -60,11 +67,6 @@ const deleteToCart = (id) => {
 
   return (
     <>
-      <Cart
-      deleteToCart={deleteToCart}
-      stock={stock}
-      addWishlist={addWishlist}
-      />
       <ProductContainer
         stock={stock}
         addToCart={addToCart}
