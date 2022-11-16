@@ -1,0 +1,17 @@
+{
+    "forniture":[
+        {
+            "id": 1,
+            "name": "Forniture 1",
+            "price": 500,
+            "img": "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, sequi."
+        },
+        {
+            "id": 2,
+            "name": "Forniture 2",
+            "price": 450,
+            "img": "https://images.pexels.com/photos/890669/pexels-photo-890669.jpeg?auto=compress&cs=tinysrgb&w=600",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, excepturi!."
+        }
+    ]}
