@@ -4,7 +4,7 @@ import { UserContext } from './UserContext'
 export const UserProvider = ({ children }) => {
 
     const [stock, setStock] = useState([]);
-    const [dataLS, setDataLS] = useState([])
+    const [dataLS, setDataLS] = useState([]);
     
 
 
