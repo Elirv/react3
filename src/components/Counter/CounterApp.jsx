@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./counterstyles.css";
 
-const CounterApp = ({ initialValue = 0 }) => {
+
+export const CounterApp = ({ initialValue = 0 }) => {
   const [counter, setCounter] = useState(initialValue);
 
   const increaseValue = () => {
@@ -20,23 +20,12 @@ const CounterApp = ({ initialValue = 0 }) => {
   return (
     <>
       <div>{counter}</div>
-      <button className="btn-counter btn-counter__add" onClick={increaseValue}>
-        +
-      </button>
-      <button className="btn-counter btn-counter__reset" onClick={resetValue}>
-        C
-      </button>
-      <button
-        className="btn-counter btn-counter__substract"
-        onClick={substractValue}
-      >
-        -
-      </button>
+      <button className="btn-counter btn-counter__add" onClick={increaseValue}>+</button>
+      <button className="btn-counter btn-counter__reset" onClick={resetValue}>C</button>
+      <button className="btn-counter btn-counter__substract" onClick={substractValue}>-</button>
       {/* <button disabled={counter <= 0} onClick={substractValue}>
         -
       </button> */}
     </>
   );
 };
-
-export default CounterApp;

@@ -8,6 +8,7 @@ import { Wishes } from '../components/Wishes/Wishes'
 import { PreHome } from '../components/PreHome/PreHome'
 import { CartPage } from '../pages/CartPage'
 import ErrorPage from '../components/ErrorPage/ErrorPage'
+import { Cart } from '../components/Cart/Cart'
 
 export const AppRouter = () => {
   return (
@@ -18,7 +19,10 @@ export const AppRouter = () => {
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/wishes' element={<Wishes/>}></Route>
       <Route path='/start' element={<Home/>}></Route>
-      <Route path="/*" element={<ErrorPage />} />    
+      <Route path="/*" element={<ErrorPage />} />  
+
+      <Route path='temp' element={<Cart/>} />
+
     </Routes>
   )
 }
