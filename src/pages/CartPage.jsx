@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext'
 import '../components/ProductsContainer/container.css'
 import '../components/Counter/counter.css'
 
-export const CartPage = ({deleteToCart}) => {
+export const CartPage = ({deleteToCart, deleteAll}) => {
 
   const { stock, dataLS, setDataLS } = useContext(UserContext);
   console.log(stock);
@@ -31,6 +31,7 @@ export const CartPage = ({deleteToCart}) => {
         }
         )}
       </div>
+                  <button className="btn btn-primary" onClick={() => { deleteAll({/*product.id*/}) }}>Delete all</button> 
     </>
   )
 }

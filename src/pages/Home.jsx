@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer/ProductsContainer';
 import { UserContext } from '../context/UserContext';
+import { CartPage } from './CartPage';
 
 export const Home = () => {
 
@@ -60,6 +61,10 @@ export const Home = () => {
     //console.log(25452);
   }
 
+  const deleteAll = () => {
+
+  }
+
   return (
     <>
       <ProductsContainer
@@ -67,6 +72,9 @@ export const Home = () => {
         addToCart={addToCart}
         addWishlist={addWishlist}
         deleteToCart={deleteToCart}
+      />
+      <CartPage
+      
       />
     </>
   )
