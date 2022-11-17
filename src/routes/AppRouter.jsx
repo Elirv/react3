@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Home } from '../pages/Home'
+import { ProductsPage } from '../pages/ProductsPage'
 import{Checkout} from '../components/Checkout/Checkout'
 //import { Cart } from '../components/Cart/Cart'
 import { Login } from '../components/Login/Login'
@@ -18,7 +18,7 @@ export const AppRouter = () => {
       <Route path='/shoppingcart' element={<CartPage/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/wishes' element={<Wishes/>}></Route>
-      <Route path='/start' element={<Home/>}></Route>
+      <Route path='/start' element={<ProductsPage/>}></Route>
       <Route path="/*" element={<ErrorPage />} />  
 
       <Route path='temp' element={<Cart/>} />

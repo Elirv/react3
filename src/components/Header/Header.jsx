@@ -23,7 +23,7 @@ export const Header = () => {
                 </ul>
                 <ul>
                     <li className="gest">
-                        Hello gest
+                        Hello guest
                     </li>
                     <li>
                         <Link to="/login">Login</Link>

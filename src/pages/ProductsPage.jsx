@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer/ProductsContainer';
 import { UserContext } from '../context/UserContext';
-import { CartPage } from './CartPage';
 
-export const Home = () => {
+export const ProductsPage = () => {
 
   const { stock, setStock, dataLS, setDataLS } = useContext(UserContext)
 
@@ -52,30 +51,12 @@ export const Home = () => {
     console.log(interin);
   }
 
-  //intento borrar
-  const deleteToCart = (product) => {
-    console.log(product);
-    let interin = JSON.parse(localStorage.removeItem('stock')) || [];
-    //interin.push(id);
-    setWishLS(interin)
-    //console.log(25452);
-  }
-
-  const deleteAll = () => {
-
-  }
-
   return (
-    <>
       <ProductsContainer
         stock={stock}
         addToCart={addToCart}
         addWishlist={addWishlist}
-        deleteToCart={deleteToCart}
+        
       />
-      <CartPage
-      
-      />
-    </>
   )
 }
