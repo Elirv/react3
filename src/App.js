@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-import { Cart } from "./components/Cart/Cart";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { UserProvider } from "./context/UserProvider";
@@ -11,7 +10,6 @@ function App() {
     <>
         <BrowserRouter>
       <UserProvider>
-      {/* <Cart/> */}
           <Header />
           <AppRouter />
           <Footer />

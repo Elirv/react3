@@ -7,16 +7,18 @@ import { Login } from '../components/Login/Login'
 import { Wishes } from '../components/Wishes/Wishes'
 import { PreHome } from '../components/PreHome/PreHome'
 import { CartPage } from '../pages/CartPage'
+import ErrorPage from '../components/ErrorPage/ErrorPage'
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<PreHome/>}></Route>
       <Route path='/checkout' element={<Checkout/>}></Route>
       <Route path='/shoppingcart' element={<CartPage/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/wishes' element={<Wishes/>}></Route>
-      <Route path='/start' element={<PreHome/>}></Route>
+      <Route path='/start' element={<Home/>}></Route>
+      <Route path="/*" element={<ErrorPage />} />    
     </Routes>
   )
 }

@@ -8,17 +8,17 @@ export const Header = () => {
     return (
         <>
             <header>
-                <Link to="/start">
+                <Link to="/">
                     <div className="logo">
                         <img src={Logo} alt="icon" width="30" />
                     </div>
                 </Link>
                 <ul>
                     <li>
-                        <Link to="/start">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/">PRODUCTS</Link>
+                        <Link to="/start">PRODUCTS</Link>
                     </li>
                 </ul>
                 <ul>
@@ -26,17 +26,17 @@ export const Header = () => {
                         <p>Hello gest</p>
                     </li>
                     <li>
-                        <Link className="btn btn-outline-success" type="submit" href="/login">Login</Link>
+                        <Link className="btn btn-outline-success" type="submit" to="/login">Login</Link>
                     </li>
                 </ul><div>
-                    <Link to="wishes" className="heart">
+                    <Link to="wishes" className="heart">heart
                         <box-icon
                             name='heart'
                             type='solid'
                             color='#f13838'
                         ></box-icon>
                     </Link>
-                    <Link to="/checkout" className="cart">
+                    <Link to="/shoppingcart" className="cart">cart
                         <box-icon
                             name="cart-alt"
                             flip="vertical"
