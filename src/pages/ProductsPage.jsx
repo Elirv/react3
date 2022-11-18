@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer/ProductsContainer';
-import { Wishes } from '../components/Wishes/Wishes';
+//import { Wishes } from '../components/Wishes/Wishes';
 import { UserContext } from '../context/UserContext';
 
 export const ProductsPage = () => {
 
-  const { stock, setStock, dataLS, setDataLS } = useContext(UserContext)
+  const { stock, setStock, dataLS, setDataLS, wishLS, setWishLS } = useContext(UserContext)
 
   let interinC = JSON.parse(localStorage.getItem('stock'));
   let interinW = JSON.parse(localStorage.getItem('wish'));
-
-  const [wishLS, setWishLS] = useState([])
 
   const fetchData = async () => {
     const petiApi = await fetch('http://localhost:4000/forniture');
@@ -53,14 +51,10 @@ export const ProductsPage = () => {
   }
 
   return (
-    <>
       <ProductsContainer
         stock={stock}
         addToCart={addToCart}
         addWishlist={addWishlist}
-
       />
-      <Wishes />
-    </>
   )
 }

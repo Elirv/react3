@@ -5,7 +5,7 @@ export const UserProvider = ({ children }) => {
 
     const [stock, setStock] = useState([]);
     const [dataLS, setDataLS] = useState([]);
-    const [wishLS, setWishLS] = useState([])
+    const [wishLS, setWishLS] = useState([]);
 
 
 

@@ -20,9 +20,16 @@ export const CartPage = () => {
   const deleteAll = () => {
     setDataLS([])
   }
+
+  
+  const deleteOne = () => {
+
+  }
+
   return (
     <Cart
       deleteAll={deleteAll}
+      deleteOne={deleteOne}
     />
   )
 }

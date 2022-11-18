@@ -5,7 +5,7 @@ import "./container.css";
 
 export const ProductsContainer = ({ addToCart, addWishlist }) => {
 
-  const { stock,} = useContext(UserContext)
+  const { stock } = useContext(UserContext)
 
   return (
 
@@ -21,6 +21,7 @@ export const ProductsContainer = ({ addToCart, addWishlist }) => {
             price={product.price}
             img={product.img}
             addToCart={addToCart}
+            addWishlist={addWishlist}
           />
         )
       })}

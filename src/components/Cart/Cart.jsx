@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import './cart.css';
 
-export const Cart = ({ deleteAll }) => {
+export const Cart = ({ deleteAll, deleteOne }) => {
 
   const { stock, dataLS, setDataLS } = useContext(UserContext);
 
