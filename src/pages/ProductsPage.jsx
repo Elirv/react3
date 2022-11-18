@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer/ProductsContainer';
+import { Wishes } from '../components/Wishes/Wishes';
 import { UserContext } from '../context/UserContext';
 
 export const ProductsPage = () => {
@@ -52,11 +53,14 @@ export const ProductsPage = () => {
   }
 
   return (
+    <>
       <ProductsContainer
         stock={stock}
         addToCart={addToCart}
         addWishlist={addWishlist}
-        
+
       />
+      <Wishes />
+    </>
   )
 }

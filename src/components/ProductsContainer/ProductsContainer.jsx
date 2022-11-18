@@ -5,7 +5,7 @@ import "./container.css";
 
 export const ProductsContainer = ({ addToCart, addWishlist }) => {
 
-  const { stock, setStock, dataLS, setDataLS } = useContext(UserContext)
+  const { stock,} = useContext(UserContext)
 
   return (
 
