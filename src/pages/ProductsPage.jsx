@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ProductsContainer } from '../components/ProductsContainer/ProductsContainer';
-//import { Wishes } from '../components/Wishes/Wishes';
 import { UserContext } from '../context/UserContext';
 
 export const ProductsPage = () => {

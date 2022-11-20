@@ -1,10 +1,25 @@
 import "./header.css";
-import { Link } from 'react-router-dom'
-//import "boxicons";
+import { Link, useSearchParams } from 'react-router-dom'
 import Logo from "../../assets/img/logo192.png";
+//import { useContext } from "react";
+//import { UserContext } from "../../context/UserContext";
 
-export const Header = () => {
+export const Header = ({ stock, setStock, dataLS, setDataLS, wishLS, setWishLS }) => {
+    //const { stock, setStock, dataLS, setDataLS, wishLS, setWishLS } = useContext(UserContext);
 
+    const [searchParams, setSearchParams] = useSearchParams();
+    const query = searchParams.get('query') ?? "" //si no hay nada k recoger pasale una string vacia
+    console.log(searchParams); //nos trae un objeto con los values
+
+    const handleInput = ({ target }) => { //e , ahora nos traemos el objeto target desestructuradi accedemos al input
+        const value = (target.value)  // ===== const {value} = target
+        console.log(target.value);      //tb nos traemos el value
+        //setSearchParams(value) value pasa a ser un objeto, lo nrmal es k se llame query, qu nos cambie la url
+        setSearchParams({ query: value })
+    }
+    //useSearchParams
+    console.log(dataLS)
+    console.log(stock)
     return (
         <>
             <header>
@@ -21,6 +36,20 @@ export const Header = () => {
                         <Link to="/start">PRODUCTS</Link>
                     </li>
                 </ul>
+                <div>
+                    <input text='text' placeholder="Search" value={query} name="filter" onChange={handleInput} />
+                    {/* <section>
+                        {data
+                        .filter((name) => {
+                            if(!query){
+                                return true;
+                            }else{
+                                console.log(name)
+                            }
+                        })
+                        }
+                    </section> */}
+                </div>
                 <ul>
                     <li className="gest">
                         Hello guest

@@ -6,7 +6,7 @@ import './cart.css';
 
 export const Cart = ({ deleteAll, deleteOne }) => {
 
-  const { stock, dataLS, setDataLS } = useContext(UserContext);
+  const { dataLS } = useContext(UserContext);
 
   return (
     <>
@@ -20,6 +20,7 @@ export const Cart = ({ deleteAll, deleteOne }) => {
                   <Card.Body>
                     <Card.Title>{data.name}</Card.Title>
                     <Card.Text>{data.price}€</Card.Text>
+                    <button className="btn btn-primary" onClick={() => { deleteOne(index) }}>Delete</button>
                   </Card.Body>
                 </Card>
               </div>
@@ -27,12 +28,13 @@ export const Cart = ({ deleteAll, deleteOne }) => {
           }
           )}
         </div>
-        <button className="btn btn-primary" onClick={deleteAll}>Delete all</button>
-        <div>
+        <div className='gen'>
           <h1>Total items: </h1>
           <main>50€</main>
+          <div className='btn-group '>
+          <button className="btn btn-primary" onClick={deleteAll}>Delete all</button>
           <Link to="/..." className="btn btn-primary">Pay</Link>
-          <button className="btn btn-primary" >Delete</button>
+          </div>
         </div>
       </div>
     </>

@@ -4,9 +4,4 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-.btn-group {
-    display: flex;
-  }
+}  
