@@ -20,6 +20,11 @@ export const CartPage = () => {
     setDataLS([])
   }
 
+  const initialValue = 0;
+  const totalCart = dataLS?.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    initialValue
+  );
 //------------------------------------------------------------//
   useEffect(() =>{
 localStorage.setItem('basket', JSON.stringify(interin))
@@ -36,6 +41,7 @@ localStorage.setItem('basket', JSON.stringify(interin))
     <Cart
       deleteAll={deleteAll}
       deleteOne={deleteOne}
+      totalCart={totalCart}
     />
   )
 }

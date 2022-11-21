@@ -1,3 +1,4 @@
+
 import './products.css';
 
 export const ProductCard = ({ id, name, description, price, img, addToCart, addWishlist }) => {
@@ -11,6 +12,7 @@ export const ProductCard = ({ id, name, description, price, img, addToCart, addW
     };
 
     return (
+        
         <div key={product.id} className="card Back ContainerCard" style={{ width: 350 }}>
             <img src={img} className="card-img-top" alt="items" />
             <div className="card-body">

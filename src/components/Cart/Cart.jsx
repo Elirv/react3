@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import './cart.css';
 
-export const Cart = ({ deleteAll, deleteOne }) => {
+export const Cart = ({ deleteAll, deleteOne, totalCart}) => {
 
   const { dataLS } = useContext(UserContext);
 
@@ -30,7 +30,7 @@ export const Cart = ({ deleteAll, deleteOne }) => {
         </div>
         <div className='gen'>
           <h1>Total items: </h1>
-          <main>50€</main>
+          <main>{totalCart}€</main>
           <div className='btn-group '>
           <button className="btn btn-primary" onClick={deleteAll}>Delete all</button>
           <Link to="/..." className="btn btn-primary">Pay</Link>
