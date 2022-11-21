@@ -25,23 +25,23 @@ export const CartPage = () => {
     (accumulator, currentValue) => accumulator + currentValue.price,
     initialValue
   );
-//------------------------------------------------------------//
-  useEffect(() =>{
-localStorage.setItem('basket', JSON.stringify(interin))
+  //------------------------------------------------------------//
+  useEffect(() => {
+    localStorage.setItem('basket', JSON.stringify(interin))
   }, [])
 
   const deleteOne = (index) => {
     console.log(dataLS);
-    let interin = dataLS.filter((item, indice) => index !== indice )
+    let interin = dataLS.filter((item, indice) => index !== indice)
     console.log(interin)
     setDataLS(interin)
   }
 
   return (
-    <Cart
-      deleteAll={deleteAll}
-      deleteOne={deleteOne}
-      totalCart={totalCart}
-    />
+      <Cart
+        deleteAll={deleteAll}
+        deleteOne={deleteOne}
+        totalCart={totalCart}
+      />
   )
 }

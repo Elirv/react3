@@ -50,10 +50,12 @@ export const ProductsPage = () => {
   }
 
   return (
+    <>
       <ProductsContainer
         stock={stock}
         addToCart={addToCart}
         addWishlist={addWishlist}
       />
+    </>
   )
 }
