@@ -1,8 +1,13 @@
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import './login.css';
+import { AuthContext } from '../../context/AuthContext';
+import { useContext } from 'react';
 
 export function Login() {
+
+  const {login} = useContext(AuthContext);
+  console.log(login);
   return (
     <>
     <h1 className='title'>Log in into your account</h1>
