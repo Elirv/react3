@@ -1,6 +1,8 @@
 import { useReducer } from "react"
 import { types } from "../types/types";
-import { AuthContext } from "./AuthContext"
+import { AuthContext } from "./AuthContext";
+
+
 import { AuthReducer } from "./AuthReducer";
 
 
@@ -13,22 +15,24 @@ export const AuthProvider = ({Children}) => {
     
     //creamos el usereducer:
     const [authState, dispatch] = useReducer(AuthReducer, initArgs);
-    const login = () => {
-        const user = {
-            id: 1,
-            user: 'eli'
-        }
-        dispatch({
-            type: types.login,
-            payload: user,  //** */
-        })
-    }
+    
+    // const login = () => {
+    //     const user = {
+    //         id: 1,
+    //         user: 'eli'
+    //     }
+    //     dispatch({
+    //         type: types.login,
+    //         payload: user,  //** */
+    //     })
+    // }
 
     return (
         <AuthContext.Provider value={
             {  
-                ...authState,  //*** */
-                login: login
+                authState
+                // ...authState,  //*** */
+                // login: login
                 }
         }>
             {Children}

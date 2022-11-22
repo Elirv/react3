@@ -63,4 +63,13 @@
             "img": "https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ullam."
         }
-    ]}
+    ],
+    "users": [
+        {
+            "id": 1,
+            "email": "maria@mail.com",
+            "password": "123",
+            "firstname":"maria"
+        }
+    ]
+}

@@ -1,13 +1,26 @@
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import './login.css';
-import { AuthContext } from '../../context/AuthContext';
-import { useContext } from 'react';
+//import { AuthContext } from '../../context/AuthContext';
+//import { useContext } from 'react';
+//import { useNavigate } from 'react-router-dom';
 
 export function Login() {
 
-  const {login} = useContext(AuthContext);
-  console.log(login);
+  // const {login} = useContext(AuthContext);
+  // console.log(login);
+
+  // const navigate = useNavigate();
+
+  // const onLogin = () => {
+
+  //   login();
+
+  //   navigate("/", {
+  //     replace: true,
+  //   });
+  // }
+
   return (
     <>
     <h1 className='title'>Log in into your account</h1>
