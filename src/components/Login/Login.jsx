@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { UserContext } from '../../context/UserContext';
@@ -26,6 +26,14 @@ export function Login({ }) {
   // }
 
   const {user, setUser} = useContext(UserContext)
+
+  useEffect(() => {
+    let interin = JSON.parse(localStorage.getItem('users'));
+    setUser(interin)
+  }, [])
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(user));
+  }, [user])
 
   const saveData = (e) => {
     e.preventDefault();
