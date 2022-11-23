@@ -9,7 +9,6 @@ import './login.css';
 
 export function Login({ dataUser}) {
   
-
   //const { setLogin } = useContext(UserContext);
 
   // const {login} = useContext(AuthContext);
@@ -28,6 +27,7 @@ export function Login({ dataUser}) {
 
   const {user, setUser} = useContext(UserContext)
 
+  //3. añadir el usuario al sessionstorage
   useEffect(() => {
     let interin = JSON.parse(sessionStorage.getItem('users'));
     setUser(interin)
@@ -38,29 +38,51 @@ export function Login({ dataUser}) {
 
   const loginUser = (e) => {
     e.preventDefault();
-    // recoger info del formilario
-    //comprobar que los datos sean correctos
-    //añadir el usuario al sessiostrage
-
+    
+    //1.recoger info del formulario
     let usuario ={
       email: e.target.email.value,
       password: e.target.password.value
     };
-
+    
+    //2.comprobar que los datos sean correctos
     const interim = dataUser.find(user => (usuario.email === user.email) &&  (usuario.password === user.password))
     if (interim) {
       console.log(interim)
       setUser(interim)
     }else {
-      alert('no esta bien')
+      alert('Unregistered user, or incorrect data')
+      //mandarlo con navigate al products 
     }
   }
 
   const registerUser = (e) => {
     e.preventDefault();
-  //recoger info del formulario
-  //fetch post
-  //
+    //1.recoger info del formulario
+    let usuario ={
+      email: e.target.email.value,
+      password: e.target.password.value
+    };
+    
+    //2.fetch post
+  (async () => {
+    const rawResponse = await fetch('http://localhost:4000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+        email: e.target.email.value,
+        password: e.target.password.value
+      })
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+    console.log(usuario);
+  })();
   }
 
 
@@ -80,7 +102,7 @@ export function Login({ dataUser}) {
           </Form.Group>
           <div className="d-grid gap-2">
             <Button variant="primary" type="submit" value="send">
-              Sign in {/* onClick={} */}
+              Sign in
             </Button>
           </div>
         </Form>
@@ -90,23 +112,23 @@ export function Login({ dataUser}) {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>First Name</Form.Label>
-              <Form.Control name="name" type="text" placeholder="First name" />
+              <Form.Control name="name" type="text" placeholder="First name" required/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPassword">
-              <Form.Label>User Name</Form.Label>
-              <Form.Control name="user" type="text" placeholder="User Name" />
+              <Form.Label>Phone number</Form.Label>
+              <Form.Control name="phone" type="number" placeholder="Phone number" required/>
             </Form.Group>
           </Row>
 
           <Form.Group className="mb-3" controlId="formGridAddress1">
             <Form.Label>Email Address</Form.Label>
-            <Form.Control name="email" type="email" placeholder="Email Address" />
+            <Form.Control name="email" type="email" placeholder="Email Address"  required/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formGridAddress2">
             <Form.Label>Password</Form.Label>
-            <Form.Control name="password" type="password" placeholder="Password" />
+            <Form.Control name="password" type="password" placeholder="Password"  required/>
           </Form.Group>
           <div className="d-grid gap-2">
             <Button variant="primary" type="submit">
