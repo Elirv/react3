@@ -33,7 +33,7 @@ export const Cart = ({ deleteAll, deleteOne, totalCart}) => {
           <main>{totalCart}€</main>
           <div className='btn-group '>
           <button className="btn btn-primary" onClick={deleteAll}>Delete all</button>
-          <Link to="/..." className="btn btn-primary">Pay</Link>
+          <Link to="/checkout" className="btn btn-primary">Pay</Link>
           </div>
         </div>
       </div>

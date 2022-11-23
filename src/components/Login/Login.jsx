@@ -3,12 +3,13 @@ import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { UserContext } from '../../context/UserContext';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 //import { AuthContext } from '../../context/AuthContext';
 //import { useContext } from 'react';
-//import { useNavigate } from 'react-router-dom';
 
 export function Login({ dataUser }) {
-
+  
+  const navigate = useNavigate();
   //const { setLogin } = useContext(UserContext);
 
   // const {login} = useContext(AuthContext);
@@ -53,6 +54,7 @@ export function Login({ dataUser }) {
       
     } else {
       alert('Unregistered user, or incorrect data')
+      navigate("/start");
       //mandarlo con navigate al products 
     }
   }

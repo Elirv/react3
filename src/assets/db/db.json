@@ -119,6 +119,20 @@
       "email": "moises.omar.garcia@gmail.com",
       "password": "2231",
       "id": 11
+    },
+    {
+      "name": "elijjj",
+      "phone": "23",
+      "email": "eco@eco.com",
+      "password": "eco",
+      "id": 12
+    },
+    {
+      "name": "elijjj",
+      "phone": "23",
+      "email": "eco@eco.com",
+      "password": "eco",
+      "id": 13
     }
   ]
 }

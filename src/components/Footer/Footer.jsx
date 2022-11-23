@@ -10,7 +10,7 @@ export const Footer = () => {
                 <div className="card-body">
                     <h5 className="card-title">NEWSLETTER</h5>
                     <p className="card-text">Subscribe to get latest news</p>
-                    <Link to="/checkout" className="btn btn-primary">SUBSCRIBE NOW</Link>
+                    <Link to="/login" className="btn btn-primary">SUBSCRIBE NOW</Link>
                 </div>
                 <div className="card-footer text-muted">
                     <li>
