@@ -7,8 +7,8 @@ import './login.css';
 //import { useContext } from 'react';
 //import { useNavigate } from 'react-router-dom';
 
-export function Login({ dataUser}) {
-  
+export function Login({ dataUser }) {
+
   //const { setLogin } = useContext(UserContext);
 
   // const {login} = useContext(AuthContext);
@@ -25,7 +25,7 @@ export function Login({ dataUser}) {
   //   });
   // }
 
-  const {user, setUser} = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
 
   //3. añadir el usuario al sessionstorage
   useEffect(() => {
@@ -38,19 +38,20 @@ export function Login({ dataUser}) {
 
   const loginUser = (e) => {
     e.preventDefault();
-    
+
     //1.recoger info del formulario
-    let usuario ={
+    let usuario = {
       email: e.target.email.value,
       password: e.target.password.value
     };
-    
+
     //2.comprobar que los datos sean correctos
-    const interim = dataUser.find(user => (usuario.email === user.email) &&  (usuario.password === user.password))
+    const interim = dataUser.find(user => (usuario.email === user.email) && (usuario.password === user.password))
     if (interim) {
-      console.log(interim)
+      //console.log(interim)
       setUser(interim)
-    }else {
+      
+    } else {
       alert('Unregistered user, or incorrect data')
       //mandarlo con navigate al products 
     }
@@ -58,31 +59,25 @@ export function Login({ dataUser}) {
 
   const registerUser = (e) => {
     e.preventDefault();
-    //1.recoger info del formulario
-    let usuario ={
-      email: e.target.email.value,
-      password: e.target.password.value
-    };
     
     //2.fetch post
-  (async () => {
-    const rawResponse = await fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: e.target.name.value,
-        phone: e.target.phone.value,
-        email: e.target.email.value,
-        password: e.target.password.value
-      })
-    });
-    const content = await rawResponse.json();
-  
-    console.log(content);
-    console.log(usuario);
-  })();
+    (async () => {
+      const rawResponse = await fetch('http://localhost:4000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        //1.recoger info del formulario
+        body: JSON.stringify({
+          name: e.target.name.value,
+          phone: e.target.phone.value,
+          email: e.target.email.value,
+          password: e.target.password.value
+        })
+      });
+      const content = await rawResponse.json();
+      console.log(content);
+    })();
   }
 
 
@@ -112,23 +107,23 @@ export function Login({ dataUser}) {
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>First Name</Form.Label>
-              <Form.Control name="name" type="text" placeholder="First name" required/>
+              <Form.Control name="name" type="text" placeholder="First name" required />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPassword">
               <Form.Label>Phone number</Form.Label>
-              <Form.Control name="phone" type="number" placeholder="Phone number" required/>
+              <Form.Control name="phone" type="number" placeholder="Phone number" required />
             </Form.Group>
           </Row>
 
           <Form.Group className="mb-3" controlId="formGridAddress1">
             <Form.Label>Email Address</Form.Label>
-            <Form.Control name="email" type="email" placeholder="Email Address"  required/>
+            <Form.Control name="email" type="email" placeholder="Email Address" required />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formGridAddress2">
             <Form.Label>Password</Form.Label>
-            <Form.Control name="password" type="password" placeholder="Password"  required/>
+            <Form.Control name="password" type="password" placeholder="Password" required />
           </Form.Group>
           <div className="d-grid gap-2">
             <Button variant="primary" type="submit">
