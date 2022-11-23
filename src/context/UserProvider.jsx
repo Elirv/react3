@@ -7,10 +7,12 @@ export const UserProvider = ({ children }) => {
     const [dataLS, setDataLS] = useState([]);
     const [wishLS, setWishLS] = useState([]);
     // const [search, setSearch] = useState([]);
-    const [login, setLogin] = useState([]);
+    const [user, setUser] = useState([]);
+    const [loginUser, setLoginUser] = useState([]);
+    const [loginPass, setLoginPass] = useState([]);
 
     return (
-        <UserContext.Provider value={{ stock, setStock, dataLS, setDataLS, wishLS, setWishLS, login, setLogin}}>
+        <UserContext.Provider value={{ stock, setStock, dataLS, setDataLS, wishLS, setWishLS, user, setUser, loginUser, setLoginUser, loginPass, setLoginPass}}>
             {children}
         </UserContext.Provider>
     )

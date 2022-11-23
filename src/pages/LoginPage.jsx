@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Login } from '../components/Login/Login';
 import { UserContext } from '../context/UserContext'
 
 export const LoginPage = () => {
 
-    const {login, setLogin, stock, setStock} = useContext(UserContext)
+    const {login, setLogin, setStock, loginPass, setLoginPass, loginUser, setLoginUser} = useContext(UserContext)
 
     let interin = JSON.parse(localStorage.getItem('users'));
 
@@ -13,6 +13,41 @@ export const LoginPage = () => {
       const data = await petiApi.json();
       setStock(data)
     }
+    const saveData = (e) =>{
+      e.preventDefault();
+      console.log('estoy dentro');
+    }
+
+    // const saveData = (e) => {
+    //   e.preventDefault();
+    //   console.log(e.target.email.value);
+    // }
+
+    //---------------//
+    // const sessionStart = (e) => {
+    //     e.preventDefault();
+
+    //     const InputRef = useRef();
+
+    //     let userEmail = InputRef.current.value;
+    //     console.log(userEmail);
+    //     let userPass = InputRef.current.value;
+    //     if (userEmail.lenght === 0 || userPass.lenght === 0){
+    //         alert('Complete the data');
+    //     }else{
+    //         if(login === "bla" && loginPass === "123"){
+    //             setLoginUser ('true');
+
+    //         }else{
+    //             setLoginUser ('false');
+    //             alert('error')
+    //             InputRef.current.value = '';
+    //             InputRef.current.value = '';
+    //         }
+    //     }
+    // } 
+    //---------------//
+
 
     useEffect(() => {
         if (interin) { setLogin(interin) }
@@ -25,7 +60,8 @@ export const LoginPage = () => {
 
   return (
     <Login 
-
+        // sessionStart={sessionStart}
+        saveData={saveData}
     />
   )
 }

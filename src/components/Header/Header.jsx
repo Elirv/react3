@@ -1,10 +1,14 @@
 import "./header.css";
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from "../../assets/img/logo192.png";
-import { SearchPage } from "../../pages/SearchPage";
+//import { SearchPage } from "../../pages/SearchPage";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 
 export const Header = () => {
+
+    const {user, setUser} = useContext(UserContext)
     
     return (
         <>
@@ -27,10 +31,16 @@ export const Header = () => {
                 </div>
                 <ul>
                     <li className="gest">
-                        Hello guest
+                        {user ? `Welcome ${user.name}` : null}
                     </li>
                     <li>
                         <Link to="/login">Login</Link>
+                    </li>
+                    <li>
+                        <a href="/" className="bt" onClick={(e) => {
+                            e.preventDefault();
+                            setUser({})
+                            }}>Logout</a>
                     </li>
                     <li>
                         <Link to="wishes">heart
