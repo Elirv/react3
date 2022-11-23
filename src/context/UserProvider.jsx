@@ -8,11 +8,11 @@ export const UserProvider = ({ children }) => {
     const [wishLS, setWishLS] = useState([]);
     // const [search, setSearch] = useState([]);
     const [user, setUser] = useState([]);
-    const [loginUser, setLoginUser] = useState([]);
-    const [loginPass, setLoginPass] = useState([]);
+    const [dataUser, setDataUser] = useState([]);
+    
 
     return (
-        <UserContext.Provider value={{ stock, setStock, dataLS, setDataLS, wishLS, setWishLS, user, setUser, loginUser, setLoginUser, loginPass, setLoginPass}}>
+        <UserContext.Provider value={{ stock, setStock, dataLS, setDataLS, wishLS, setWishLS, user, setUser, dataUser, setDataUser, }}>
             {children}
         </UserContext.Provider>
     )

@@ -7,7 +7,8 @@ import './login.css';
 //import { useContext } from 'react';
 //import { useNavigate } from 'react-router-dom';
 
-export function Login({ }) {
+export function Login({ dataUser}) {
+  
 
   //const { setLogin } = useContext(UserContext);
 
@@ -28,25 +29,38 @@ export function Login({ }) {
   const {user, setUser} = useContext(UserContext)
 
   useEffect(() => {
-    let interin = JSON.parse(localStorage.getItem('users'));
+    let interin = JSON.parse(sessionStorage.getItem('users'));
     setUser(interin)
   }, [])
   useEffect(() => {
-    localStorage.setItem('users', JSON.stringify(user));
+    sessionStorage.setItem('users', JSON.stringify(user));
   }, [user])
 
-  const saveData = (e) => {
+  const loginUser = (e) => {
     e.preventDefault();
-    // console.log(e.target.email.value);
-    // console.log('ok');
+    // recoger info del formilario
+    //comprobar que los datos sean correctos
+    //añadir el usuario al sessiostrage
 
-    let userr ={
-      name: e.target.name.value,
+    let usuario ={
       email: e.target.email.value,
       password: e.target.password.value
     };
-    console.log(userr);
-    setUser(userr);
+
+    const interim = dataUser.find(user => (usuario.email === user.email) &&  (usuario.password === user.password))
+    if (interim) {
+      console.log(interim)
+      setUser(interim)
+    }else {
+      alert('no esta bien')
+    }
+  }
+
+  const registerUser = (e) => {
+    e.preventDefault();
+  //recoger info del formulario
+  //fetch post
+  //
   }
 
 
@@ -54,12 +68,8 @@ export function Login({ }) {
     <>
       <h1 className='title'>Log in into your account</h1>
       <main className='container_login'>
-        <Form className='form' onSubmit={saveData}>
+        <Form className='form' onSubmit={(e) => loginUser(e)}>
           <h3>Sign in</h3>
-          <Form.Group className="mb-4">
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="name" type="text" placeholder="Enter your name" />
-          </Form.Group>
           <Form.Group className="mb-4">
             <Form.Label>Email address</Form.Label>
             <Form.Control name="email" type="email" placeholder="Enter email" />
@@ -75,7 +85,7 @@ export function Login({ }) {
           </div>
         </Form>
 
-        <Form className='form'>
+        <Form className='form' onSubmit={(e) => registerUser(e)}>
           <h3>Are you new? Create your account</h3>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
