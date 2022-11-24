@@ -133,6 +133,13 @@
       "email": "eco@eco.com",
       "password": "eco",
       "id": 13
+    },
+    {
+      "name": "fsdfdssfs khougu",
+      "phone": "45",
+      "email": "admin@assemblerschool.com",
+      "password": "asd",
+      "id": 14
     }
   ]
 }

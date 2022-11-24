@@ -31,7 +31,7 @@ export const Header = () => {
                 </div>
                 <ul>
                     <li className="gest">
-                        {user ? `Welcome ${user.name}` : null}
+                        {user ? `Welcome ${user.name}` : []}
                     </li>
                     <li>
                         <Link to="/login">Login</Link>
