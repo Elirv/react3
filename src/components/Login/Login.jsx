@@ -51,10 +51,10 @@ export function Login({ dataUser }) {
     if (interim) {
       //console.log(interim)
       setUser(interim)
-      
+      //navigate("/start");
     } else {
       alert('Unregistered user, or incorrect data')
-      navigate("/start");
+      navigate("/");
       //mandarlo con navigate al products 
     }
   }
