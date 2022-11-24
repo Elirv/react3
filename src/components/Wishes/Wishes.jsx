@@ -10,7 +10,7 @@ export const Wishes = ({deleteAll, deleteOne}) => {
 
   return (
     <>
-        <div className="container">
+        <div className="containerw">
           {wishLS.map((data, index) => {
             return (
               <div key={index}>
