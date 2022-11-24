@@ -27,7 +27,10 @@ export const Wishes = ({deleteAll, deleteOne}) => {
           })
           }
         </div>
-        <button className="btn-group btn btn-primary"><Link to='/start'>Return</Link></button>
+        <div className="btn-gr">
+        <button className="btn btn-primary" onClick={deleteAll}>Delete</button>
+        <button className="btn btn btn-primary"><Link to='/start'>Return</Link></button>
+        </div>
     </>
   )
 }

@@ -1,9 +1,10 @@
 import "./header.css";
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logo from "../../assets/img/logo192.png";
 //import { SearchPage } from "../../pages/SearchPage";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import 'boxicons'
 
 
 export const Header = () => {
@@ -43,11 +44,11 @@ export const Header = () => {
                             }}>Logout</a>
                     </li>
                     <li>
-                        <Link to="wishes">heart
+                        <Link to="wishes"><box-icon name='heart' type='solid' animation='tada' color='#fffbfb' ></box-icon>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/shoppingcart">cart
+                        <Link to="/shoppingcart"><box-icon name='cart-alt' type='solid' rotate='90' animation='tada' color='#ffffff' ></box-icon>
                             <span className="item__total"> 0 </span>
                         </Link>
                     </li>
