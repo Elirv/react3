@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContext'
 export const WishesPage = () => {
 
     const { wishLS, setWishLS } = useContext(UserContext);
-   
+
     let interin = JSON.parse(localStorage.getItem('wish'))
 
     useEffect(() => {

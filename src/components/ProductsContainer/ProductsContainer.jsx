@@ -10,10 +10,10 @@ export const ProductsContainer = ({ addToCart, addWishlist }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") ?? ""
-  //console.log(searchParams)
+    //console.log(searchParams)
   const handleInput = ({ target }) => {
     const { value } = target
-    console.log(value);
+    //console.log(value);
     setSearchParams({ query: value })
   }
 
