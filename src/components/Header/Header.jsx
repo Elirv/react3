@@ -1,7 +1,6 @@
 import "./header.css";
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/img/logo192.png";
-//import { SearchPage } from "../../pages/SearchPage";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import 'boxicons'
@@ -9,7 +8,7 @@ import 'boxicons'
 
 export const Header = () => {
 
-    const {user, setUser} = useContext(UserContext)
+    const {user, setUser, dataLS, wishLS} = useContext(UserContext)
     
     return (
         <>
@@ -27,9 +26,6 @@ export const Header = () => {
                         <Link to="/start">PRODUCTS</Link>
                     </li>
                 </ul>
-                <div>
-                {/* <SearchPage /> */}
-                </div>
                 <ul>
                     <li className="gest">
                         {user ? `Welcome ${user.name}` : []}
@@ -45,11 +41,12 @@ export const Header = () => {
                     </li>
                     <li>
                         <Link to="wishes"><box-icon name='heart' type='solid' animation='tada' color='#fffbfb' ></box-icon>
+                            <span className="item__total"> {wishLS.length} </span>
                         </Link>
                     </li>
                     <li>
                         <Link to="/shoppingcart"><box-icon name='cart-alt' type='solid' rotate='90' animation='tada' color='#ffffff' ></box-icon>
-                            <span className="item__total"> 0 </span>
+                            <span className="item__total"> {dataLS.length} </span>
                         </Link>
                     </li>
                 </ul>

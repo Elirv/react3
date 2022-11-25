@@ -56,7 +56,8 @@ export const LoginPage = () => {
       
     }
   }
-
+  
+///----------------------------
   const registerUser = (e) => {
     e.preventDefault();
     

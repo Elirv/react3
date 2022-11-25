@@ -25,17 +25,20 @@ export const CartPage = () => {
     (accumulator, currentValue) => accumulator + currentValue.price,
     initialValue
   );
+
+  
   //------------------------------------------------------------//
   useEffect(() => {
     localStorage.setItem('basket', JSON.stringify(interin))
   }, [])
-
+  
   const deleteOne = (index) => {
     console.log(dataLS);
     let interin = dataLS.filter((item, indice) => index !== indice)
     console.log(interin)
     setDataLS(interin)
   }
+  //const itemsInCart = state.dataLS.find(item => item.id === )
 
   return (
       <Cart

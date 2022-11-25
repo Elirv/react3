@@ -69,7 +69,16 @@
       "id": 1,
       "email": "maria@mail.com",
       "password": "123",
-      "name": "maria"
+      "name": "maria",
+      "address": [
+        {
+          "phone": 928654874,
+          "surname": "alamo",
+          "city": "las palmas",
+          "postal code": 35825,
+          "birthday": 21081987
+        }
+      ]
     },
     {
       "id": 2,

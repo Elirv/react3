@@ -1,14 +1,14 @@
-import { useContext} from 'react';
+//import { useContext} from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { UserContext } from '../../context/UserContext';
+//import { UserContext } from '../../context/UserContext';
 import './login.css';
 //import { useNavigate } from 'react-router-dom';
 
 
 export function Login({ dataUser, loginUser, registerUser }) {
   
-  const { user, setUser } = useContext(UserContext)
+  //const { user, setUser } = useContext(UserContext)
   
   return (
     <>
