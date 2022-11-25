@@ -1,88 +1,15 @@
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { UserContext } from '../../context/UserContext';
 import './login.css';
-import { useNavigate } from 'react-router-dom';
-//import { AuthContext } from '../../context/AuthContext';
-//import { useContext } from 'react';
+//import { useNavigate } from 'react-router-dom';
 
-export function Login({ dataUser }) {
+
+export function Login({ dataUser, loginUser, registerUser }) {
   
-  const navigate = useNavigate();
-  //const { setLogin } = useContext(UserContext);
-
-  // const {login} = useContext(AuthContext);
-  // console.log(login);
-
-  // const navigate = useNavigate();
-
-  // const onLogin = () => {
-
-  //   login();
-
-  //   navigate("/", {
-  //     replace: true,
-  //   });
-  // }
-
   const { user, setUser } = useContext(UserContext)
-
-  //3. añadir el usuario al sessionstorage
-  useEffect(() => {
-    let interin = JSON.parse(sessionStorage.getItem('users'));
-    setUser(interin)
-  }, [])
-  useEffect(() => {
-    sessionStorage.setItem('users', JSON.stringify(user));
-  }, [user])
-
-  const loginUser = (e) => {
-    e.preventDefault();
-
-    //1.recoger info del formulario
-    let usuario = {
-      email: e.target.email.value,
-      password: e.target.password.value
-    };
-
-    //2.comprobar que los datos sean correctos
-    const interim = dataUser.find(user => (usuario.email === user.email) && (usuario.password === user.password))
-    if (interim) {
-      //console.log(interim)
-      setUser(interim)
-      //navigate("/start");
-    } else {
-      alert('Unregistered user, or incorrect data')
-      navigate("/");
-      //mandarlo con navigate al products 
-    }
-  }
-
-  const registerUser = (e) => {
-    e.preventDefault();
-    
-    //2.fetch post
-    (async () => {
-      const rawResponse = await fetch('http://localhost:4000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        //1.recoger info del formulario
-        body: JSON.stringify({
-          name: e.target.name.value,
-          phone: e.target.phone.value,
-          email: e.target.email.value,
-          password: e.target.password.value
-        })
-      });
-      const content = await rawResponse.json();
-      console.log(content);
-    })();
-  }
-
-
+  
   return (
     <>
       <h1 className='title'>Log in into your account</h1>

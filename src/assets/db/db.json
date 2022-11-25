@@ -69,84 +69,21 @@
       "id": 1,
       "email": "maria@mail.com",
       "password": "123",
-      "firstname": "maria"
+      "name": "maria"
     },
     {
-      "name": "s",
-      "phone": "625",
-      "email": "dasd@fr.com",
-      "password": "add",
-      "id": 5
-    },
-    {
-      "name": "s",
-      "phone": "625",
-      "email": "dasd@fr.com",
-      "password": "add",
-      "id": 6
-    },
-    {
-      "name": "fsdfdssfs khougu",
-      "phone": "6425",
-      "email": "balblablabl@esto.com",
-      "password": "456",
-      "id": 7
-    },
-    {
-      "name": "fsdfdssfs khougu",
-      "phone": "272",
-      "email": "balblablabl@esto.com",
-      "password": "345",
-      "id": 8
-    },
-    {
-      "name": "fsdfdssfs khougu",
-      "phone": "272",
-      "email": "balblablabl@esto.com",
-      "password": "345",
-      "id": 9
-    },
-    {
-      "name": "fsdfdssfs khougu",
-      "phone": "5555",
-      "email": "armascruz.carlos@gmail.com",
-      "password": "dsds",
-      "id": 10
-    },
-    {
-      "name": "sd",
-      "phone": "32",
-      "email": "moises.omar.garcia@gmail.com",
-      "password": "2231",
-      "id": 11
-    },
-    {
-      "name": "elijjj",
+      "id": 2,
+      "name": "eli",
       "phone": "23",
       "email": "eco@eco.com",
-      "password": "eco",
-      "id": 12
+      "password": "eco"
     },
     {
-      "name": "elijjj",
-      "phone": "23",
-      "email": "eco@eco.com",
-      "password": "eco",
-      "id": 13
-    },
-    {
-      "name": "fsdfdssfs khougu",
-      "phone": "45",
-      "email": "admin@assemblerschool.com",
-      "password": "asd",
-      "id": 14
-    },
-    {
-      "name": "carlos",
-      "phone": "585",
-      "email": "balblablabl@esto.com",
-      "password": "carlos",
-      "id": 15
+      "name": "eli",
+      "phone": "1235",
+      "email": "blabla@bla.com",
+      "password": "prueba",
+      "id": 3
     }
   ]
 }
