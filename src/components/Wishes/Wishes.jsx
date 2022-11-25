@@ -4,33 +4,33 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import './wish.css';
 
-export const Wishes = ({deleteAll, deleteOne}) => {
+export const Wishes = ({ deleteAll, deleteOne }) => {
 
   const { wishLS } = useContext(UserContext)
 
   return (
     <>
-        <div className="containerw">
-          {wishLS.map((data, index) => {
-            return (
-              <div key={index}>
-                <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={data.img} />
-                  <Card.Body>
-                    <Card.Title>{data.name}</Card.Title>
-                    <Card.Text>{data.price}€</Card.Text>
-                  </Card.Body>
-                  <button className="btn btn-primary" onClick={() => { deleteOne(index) }}>Delete</button>
-                </Card>
-              </div>
-            );
-          })
-          }
-        </div>
-        <div className="btn-gr">
+      <div className="containerw">
+        {wishLS.map((data, index) => {
+          return (
+            <div key={index}>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={data.img} />
+                <Card.Body>
+                  <Card.Title>{data.name}</Card.Title>
+                  <Card.Text>{data.price}€</Card.Text>
+                </Card.Body>
+                <button className="btn btn-primary" onClick={() => { deleteOne(index) }}>Delete</button>
+              </Card>
+            </div>
+          );
+        })
+        }
+      </div>
+      <div className="btn-gr">
         <button className="btn btn-primary" onClick={deleteAll}>Delete</button>
         <button className="btn btn btn-primary"><Link to='/start'>Return</Link></button>
-        </div>
+      </div>
     </>
   )
 }

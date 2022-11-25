@@ -40,7 +40,7 @@ export const Header = () => {
                             }}>Logout</a>
                     </li>
                     <li>
-                        <Link to="wishes"><box-icon name='heart' type='solid' animation='tada' color='#fffbfb' ></box-icon>
+                        <Link to="/wishes"><box-icon name='heart' type='solid' animation='tada' color='#fffbfb' ></box-icon>
                             <span className="item__total"> {wishLS.length} </span>
                         </Link>
                     </li>

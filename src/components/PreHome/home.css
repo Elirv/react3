@@ -3,15 +3,16 @@
     margin-top: 12em;
     margin-left:20em;
     margin-right:10em;
-
 }
 
 .letter:hover{
     color: rgb(75, 75, 75);
     text-decoration: underline;
-
 }
 
-.paragraph{
-    color: black;
+.start{
+    padding-top: 200px;
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-weight: bold;
 }

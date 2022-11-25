@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Footer } from '../components/Footer/Footer';
+import { Header } from '../components/Header/Header';
 import { Login } from '../components/Login/Login';
 import { UserContext } from '../context/UserContext'
 
@@ -45,22 +47,22 @@ export const LoginPage = () => {
 
     //2.comprobar que los datos sean correctos
     const interim = dataUser.find(user => (usuario.email === user.email) && (usuario.password === user.password))
+    //if
     if (interim) {
       //console.log(interim)
       setUser(interim)
-      alert('Unregistered user, or incorrect data')
-      navigate("/start");
-    } else {
       alert('User registered successfully')
+      //navigate("/start");
+    } else {
+      alert('Unregistered user, or incorrect data')
       navigate("/");
-      
     }
   }
-  
-///----------------------------
+
+  ///----------------------------
   const registerUser = (e) => {
     e.preventDefault();
-    
+
     //2.fetch post
     (async () => {
       const rawResponse = await fetch('http://localhost:4000/users', {
@@ -82,10 +84,14 @@ export const LoginPage = () => {
   }
 
   return (
-    <Login
-    dataUser={dataUser}
-    loginUser={loginUser}
-    registerUser={registerUser}
-    />
+    <>
+      <Header />
+      <Login
+        dataUser={dataUser}
+        loginUser={loginUser}
+        registerUser={registerUser}
+      />
+      <Footer/>
+    </>
   )
 }

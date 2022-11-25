@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from 'react'
+import { Footer } from '../components/Footer/Footer';
+import { Header } from '../components/Header/Header';
 import { Wishes } from '../components/Wishes/Wishes';
 import { UserContext } from '../context/UserContext'
 
@@ -33,9 +35,13 @@ export const WishesPage = () => {
     }
 
     return (
-        <Wishes
-            deleteAll={deleteAll}
-            deleteOne={deleteOne}
-        />
+        <>
+            <Header/>
+            <Wishes
+                deleteAll={deleteAll}
+                deleteOne={deleteOne}
+            />
+            <Footer/>
+        </>
     )
 }

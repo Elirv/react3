@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext'
 import { Cart } from '../components/Cart/Cart';
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
 
 export const CartPage = () => {
 
@@ -41,10 +43,14 @@ export const CartPage = () => {
   //const itemsInCart = state.dataLS.find(item => item.id === )
 
   return (
+    <>
+      <Header/>
       <Cart
         deleteAll={deleteAll}
         deleteOne={deleteOne}
         totalCart={totalCart}
       />
+      <Footer />
+    </>
   )
 }
