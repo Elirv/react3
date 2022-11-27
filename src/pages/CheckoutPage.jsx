@@ -6,20 +6,20 @@ import { UserContext } from "../context/UserContext";
 
 export const CheckoutPage = () => {
 
-  const { userAddress, setUserAddress } = useContext(UserContext);
+  const { dataUser, setDataUser, userAddress, setUserAddress } = useContext(UserContext);
   
   useEffect(() => {
-    let interin = JSON.parse(sessionStorage.getItem('address'));
+    let interin = JSON.parse(localStorage.getItem('address'));
     fetchUserAddress();
-    setUserAddress(interin)
+    setDataUser(interin)
   }, [])
   
   useEffect(() => {
-    sessionStorage.setItem('address', JSON.stringify(userAddress));
-  }, [userAddress])
+    localStorage.setItem('address', JSON.stringify(dataUser));
+  }, [dataUser])
   
   const fetchUserAddress = async () => {
-    const petiApi = await fetch('http://localhost:4000/users/address');
+    const petiApi = await fetch('http://localhost:4000/address');
     const data = await petiApi.json();
     setUserAddress(data)
   }
@@ -30,8 +30,8 @@ export const CheckoutPage = () => {
     //2.fetch post
     
     (async () => {
-      const response = await fetch('http://localhost:4000/users/address', {
-        method: 'PUSH',
+      const response = await fetch('http://localhost:4000/address', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
