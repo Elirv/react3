@@ -1,21 +1,21 @@
-import { useContext } from 'react';
+//import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { UserContext } from '../../context/UserContext';
+//import { UserContext } from '../../context/UserContext';
 import './checkout.css'
 
-export function Checkout(userAddress ) {
+export function Checkout( userPutAddress ) {
 
-  const { user, setUser, dataUser, setDataUser } = useContext(UserContext);
+  //const { user, setUser, dataUser, setDataUser } = useContext(UserContext);
 
   return (
-    <Form className="contenr" onSubmit={(e) => userAddress(e)}>
+    <Form className="contenr" onSubmit={(e) => userPutAddress(e)}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>
-          <Form.Control name="name" type="text" placeholder="Name" defaultValue={user.name}/>
+          <Form.Control name="name" type="text" placeholder="Name"/> {/*defaultValue={user.name}*/} 
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridSurname">
@@ -26,7 +26,7 @@ export function Checkout(userAddress ) {
 
       <Form.Group className="mb-3" controlId="formGridAddress">
         <Form.Label>Email</Form.Label>
-        <Form.Control name="email" type="text" placeholder="Email" defaultValue={user.email}/>
+        <Form.Control name="email" type="text" placeholder="Email"/> {/*defaultValue={user.email}*/}
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress">

@@ -6,40 +6,32 @@ import { UserContext } from "../context/UserContext";
 
 export const CheckoutPage = () => {
 
-  const { user, setUser, dataUser, setDataUser } = useContext(UserContext);
-
+  const { userAddress, setUserAddress } = useContext(UserContext);
+  
   useEffect(() => {
-    let interin = JSON.parse(localStorage.getItem('users'));
-    fetchDatauser();
-    setUser(interin)
+    let interin = JSON.parse(sessionStorage.getItem('address'));
+    fetchUserAddress();
+    setUserAddress(interin)
   }, [])
-
+  
   useEffect(() => {
-    localStorage.setItem('users', JSON.stringify(user));
-  }, [user])
-
-  const fetchDatauser = async () => {
+    sessionStorage.setItem('address', JSON.stringify(userAddress));
+  }, [userAddress])
+  
+  const fetchUserAddress = async () => {
     const petiApi = await fetch('http://localhost:4000/users/address');
     const data = await petiApi.json();
-    setDataUser(data)
+    setUserAddress(data)
   }
-
-  //3. añadir el address al sessionstorage
-  useEffect(() => {
-    let interin = JSON.parse(sessionStorage.getItem('users/address'));
-    setUser(interin)
-  }, [])
-  useEffect(() => {
-    sessionStorage.setItem('users/address', JSON.stringify(user));
-  }, [user])
-
-  const userAddress = (e) => {
+  
+  const userPutAddress = (e) => {
     e.preventDefault();
-
+    
     //2.fetch post
+    
     (async () => {
-      const rawResponse = await fetch('http://localhost:4000/users/address', {
-        method: 'PUT',
+      const response = await fetch('http://localhost:4000/users/address', {
+        method: 'PUSH',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -53,7 +45,7 @@ export const CheckoutPage = () => {
           birthday: e.target.birthday.value
         })
       });
-      const content = await rawResponse.json();
+      const content = await response.json();
       console.log(content);
     })();
   }
@@ -62,8 +54,8 @@ export const CheckoutPage = () => {
     <>
       <Header />
       <Checkout
-        dataUser={dataUser}
-        userAddress={userAddress}
+        // dataUser={dataUser}
+        userPutAddress={userPutAddress}
       />
       <Footer />
     </>

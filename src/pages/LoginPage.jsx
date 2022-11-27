@@ -64,23 +64,24 @@ export const LoginPage = () => {
     e.preventDefault();
 
     //2.fetch post
-    (async () => {
-      const rawResponse = await fetch('http://localhost:4000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        //1.recoger info del formulario
-        body: JSON.stringify({
-          name: e.target.name.value,
-          phone: e.target.phone.value,
-          email: e.target.email.value,
-          password: e.target.password.value
-        })
-      });
-      const content = await rawResponse.json();
-      console.log(content);
-    })();
+      (async () => {
+        const rawResponse = await fetch('http://localhost:4000/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          //1.recoger info del formulario
+          body: JSON.stringify({
+            name: e.target.name.value,
+            phone: e.target.phone.value,
+            email: e.target.email.value,
+            password: e.target.password.value
+          })
+        });
+        const content = await rawResponse.json();
+        console.log(content);
+      })()
+    ;
   }
 
   return (
@@ -91,7 +92,7 @@ export const LoginPage = () => {
         loginUser={loginUser}
         registerUser={registerUser}
       />
-      <Footer/>
+      <Footer />
     </>
   )
 }

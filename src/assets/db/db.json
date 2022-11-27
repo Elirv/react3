@@ -74,7 +74,7 @@
         {
           "phone": 928654874,
           "surname": "alamo",
-          "city": "las palmas",
+          "city": "las palmacvvdvsds",
           "postal code": 35825,
           "birthday": 21081987
         }
@@ -85,21 +85,16 @@
       "name": "eli",
       "phone": "23",
       "email": "eco@eco.com",
-      "password": "eco"
-    },
-    {
-      "name": "eli",
-      "phone": "1235",
-      "email": "blabla@bla.com",
-      "password": "prueba",
-      "id": 3
-    },
-    {
-      "name": "nuevo",
-      "phone": "542",
-      "email": "admin@assemblerschool.com",
-      "password": "125",
-      "id": 5
+      "password": "eco",
+      "address": [
+        {
+          "phone": 9284874,
+          "surname": "asd",
+          "city": "las palmacvvdvsds",
+          "postal code": 35825,
+          "birthday": 21081987
+        }
+      ]
     }
   ]
 }
